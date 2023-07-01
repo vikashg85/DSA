@@ -15,6 +15,13 @@ class LinkedList:
         n.next_node = self.head
         self.head = n
 
+    def delete_first(self):
+        n = self.head
+        self.head = n.next_node
+        n.next_node = None
+        return n.element
+        
+
     def print_list(self):
         n = self.head
         while n is not None:
