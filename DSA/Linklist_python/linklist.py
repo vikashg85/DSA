@@ -17,10 +17,19 @@ class LinkedList:
 
     def delete_first(self):
         n = self.head
-        self.head = n.next_node
-        n.next_node = None
+        if n is not None:
+            self.head = n.next_node
+            n.next_node = None
         return n.element
         
+    def last_insert(self,element):
+        n = Node(element)
+        m = self.head
+        while m.next_node is not None:
+            m = m.next_node
+        m.next_node = n
+        n.next_node = None
+
 
     def print_list(self):
         n = self.head
@@ -40,6 +49,9 @@ def linked_list():
     ll.insert_first(5)
     ll.insert_first(4)
     ll.insert_first(3)
+    ll.print_list()
+    # ll.delete_first()
+    ll.last_insert(7)
     ll.print_list()
 
 
